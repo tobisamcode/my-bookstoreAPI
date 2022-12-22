@@ -1,3 +1,4 @@
+const { number } = require("joi");
 const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
@@ -25,14 +26,17 @@ const bookSchema = new Schema({
 
   year: {
     type: Number,
-    required: true,
-    max: [2022, "year must be less than or equal to 2022"]
+    required: true
   },
 
   isbn: {
     type: String,
     required: true,
     unique: true
+  },
+
+  price: {
+    type: Number
   },
 
   createdAt: {
